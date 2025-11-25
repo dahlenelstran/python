@@ -10,9 +10,10 @@ def download(url, folder):
     ydl_opts = {
         'format': 'bestaudio/best',
         'audioformat': 'mp3',
-        'outtmpl': f'{folder}/%(title)s.%(ext)s',
+        'outtmpl': f'{folder}/%(artist)s - %(album)s - %(title)s.%(ext)s',
         'embedmetadata': True,
         'addmetadata': True,
+        'cookiefile': 'cookies2.txt', # was asked to prove I'm not a bot so I have to add this lmao
         'postprocessors': [{  # Extract audio using ffmpeg
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
